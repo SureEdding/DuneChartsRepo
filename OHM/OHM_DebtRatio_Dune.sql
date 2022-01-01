@@ -21,6 +21,7 @@ select
     supply."date" as "finalDate",
     supply.total_supply,
     rfv.dai_rfv,
+    (rfv.dai_rfv + rfv.lusd_rfv + rfv.frax_rfv)/supply.total_supply as "total_debt_ratio",
     (rfv.dai_rfv/supply.total_supply) as dai_debt_ratio,
     (rfv.lusd_rfv/supply.total_supply) as lusd_debt_ratio,
     (rfv.frax_rfv/supply.total_supply) as frax_debt_ratio
